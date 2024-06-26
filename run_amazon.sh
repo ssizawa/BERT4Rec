@@ -1,5 +1,5 @@
 CKPT_DIR="path/BERT4Rec"
-dataset_name="ml-20m"
+dataset_name="amazon"
 max_seq_length=200
 masked_lm_prob=0.2
 max_predictions_per_seq=20
@@ -26,7 +26,6 @@ python3 -u gen_data_fin.py \
     --prop_sliding_window=${prop_sliding_window} \
     --signature=${signature} \
     --pool_size=${pool_size} \
-
 
 CUDA_VISIBLE_DEVICES=4 python3 -u run.py \
     --train_input_file=./data/${dataset_name}${signature}.train.tfrecord \
